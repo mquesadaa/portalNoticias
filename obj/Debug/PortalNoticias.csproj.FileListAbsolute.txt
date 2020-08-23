@@ -1,0 +1,176 @@
+D:\Documentos\Progra avanzada\PortalNoticias\bin\PortalNoticias.dll.config
+D:\Documentos\Progra avanzada\PortalNoticias\bin\PortalNoticias.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\PortalNoticias.pdb
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\csc.exe
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\csc.exe.config
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\csc.rsp
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\csi.exe
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\csi.exe.config
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\csi.rsp
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.AppContext.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Collections.Immutable.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Console.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Globalization.Calendars.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.IO.Compression.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.IO.FileSystem.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Net.Http.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Net.Sockets.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Reflection.Metadata.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.ValueTuple.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Xml.XPath.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\vbc.exe
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\vbc.exe.config
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\vbc.rsp
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\VBCSCompiler.exe
+D:\Documentos\Progra avanzada\PortalNoticias\bin\roslyn\VBCSCompiler.exe.config
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Antlr3.Runtime.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Microsoft.Web.Infrastructure.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Newtonsoft.Json.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Helpers.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Mvc.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Optimization.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Razor.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.WebPages.Deployment.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.WebPages.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.WebPages.Razor.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\WebGrease.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Helpers.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Mvc.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Optimization.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.Razor.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.WebPages.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.WebPages.Deployment.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\System.Web.WebPages.Razor.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Newtonsoft.Json.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Antlr3.Runtime.pdb
+D:\Documentos\Progra avanzada\PortalNoticias\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.Helpers.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.Mvc.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.Optimization.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.Razor.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.WebPages.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Documentos\Progra avanzada\PortalNoticias\obj\Debug\PortalNoticias.csprojAssemblyReference.cache
+D:\Documentos\Progra avanzada\PortalNoticias\obj\Debug\PortalNoticias.csproj.CoreCompileInputs.cache
+D:\Documentos\Progra avanzada\PortalNoticias\obj\Debug\PortalNoticias.csproj.CopyComplete
+D:\Documentos\Progra avanzada\PortalNoticias\obj\Debug\PortalNoticias.dll
+D:\Documentos\Progra avanzada\PortalNoticias\obj\Debug\PortalNoticias.pdb
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\PortalNoticias.dll.config
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\PortalNoticias.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\PortalNoticias.pdb
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\csc.exe
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\csc.exe.config
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\csc.rsp
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\csi.exe
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\csi.exe.config
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\csi.rsp
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.AppContext.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Collections.Immutable.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Console.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Globalization.Calendars.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.IO.Compression.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.IO.FileSystem.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Net.Http.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Net.Sockets.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Reflection.Metadata.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.ValueTuple.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Xml.XPath.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\vbc.exe
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\vbc.exe.config
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\vbc.rsp
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\VBCSCompiler.exe
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\roslyn\VBCSCompiler.exe.config
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Antlr3.Runtime.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Microsoft.Web.Infrastructure.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Newtonsoft.Json.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Helpers.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Mvc.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Optimization.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Razor.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.WebPages.Deployment.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.WebPages.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.WebPages.Razor.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\WebGrease.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Helpers.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Mvc.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Optimization.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.Razor.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.WebPages.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.WebPages.Deployment.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\System.Web.WebPages.Razor.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Newtonsoft.Json.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Antlr3.Runtime.pdb
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.Helpers.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.Mvc.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.Optimization.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.Razor.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.WebPages.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\obj\Debug\PortalNoticias.csprojAssemblyReference.cache
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\obj\Debug\PortalNoticias.csproj.CoreCompileInputs.cache
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\obj\Debug\PortalNoticias.csproj.CopyComplete
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\obj\Debug\PortalNoticias.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\obj\Debug\PortalNoticias.pdb
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\EntityFramework.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\EntityFramework.SqlServer.dll
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\EntityFramework.xml
+D:\Documentos\Progra avanzada\Proyecto PORTAL NOTICIAS\PortalNoticias\bin\EntityFramework.SqlServer.xml

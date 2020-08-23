@@ -1,0 +1,65 @@
+﻿@model PortalNoticias.ETL.loginClase
+
+@{
+    ViewBag.Title = "RegistroIndex";
+}
+<link href="~/Content/css/extras.css" rel="stylesheet" type="text/css" />
+<h2>Registro</h2>
+
+<br />
+<br />
+
+@using (Html.BeginForm("RegistroIndex", "Login", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-lg-4 form-group">
+            <div class="col-md-12">
+                @Html.LabelFor(m => m.Nombre, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Nombre, null, new { @class = "form-control", autocomplete = "off" })
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 form-group">
+            <div class="col-md-12">
+                @Html.LabelFor(m => m.Apellido1, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Apellido1, null, new { @class = "form-control", autocomplete = "off" })
+            </div>
+        </div>
+
+        <div class="col-lg-4 form-group">
+            <div class="col-md-12">
+                @Html.LabelFor(m => m.Apellido2, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Apellido2, null, new { @class = "form-control", autocomplete = "off" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-12 form-group">
+            <div class="col-md-12">
+                @Html.LabelFor(m => m.NombreUsuario, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.NombreUsuario, null, new { @class = "form-control", autocomplete = "off" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12 form-group">
+            <div class="col-md-12">
+                @Html.LabelFor(m => m.Clave, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Clave, null, new { @class = "form-control", autocomplete = "off" })
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 form-group">
+            <div class="col-md-12">
+                <input id="btnRegistrar" type="submit" class="btn btn-success" value="Registrar" />
+            </div>
+        </div>
+    </div>
+}

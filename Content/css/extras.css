@@ -1,0 +1,50 @@
+﻿@charset "utf-8";
+
+.login_btn {
+    background: #cca947;
+    color: #fff;
+    margin: 0 10px 0px 300px;
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+.registro_btn {
+    background: #cca947;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+h2 {
+    font-family: Verdana;
+}
+
+.col-md-12 {
+    font-family: Verdana;
+}
+.enlaces {
+    color: #ffffff
+}
+
+.enlaces:active {
+        color: #ffffff
+    }
+
+.enlaces:link {
+        color: #ffffff
+    }
+
+.enlaces:visited {
+        color: #ffffff
+    }
+
+.listaFooter li {
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.listaInicio {
+    display: inline;
+}

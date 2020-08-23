@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalNoticiasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Archivo">
+    <Key>
+      <PropertyRef Name="IdArchivo" />
+    </Key>
+    <Property Name="IdArchivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNoticia" Type="Int64" Nullable="false" />
+    <Property Name="Ruta" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Noticia" Relationship="Self.fk_Noticia_Archivo" FromRole="Archivo" ToRole="Noticia" />
+  </EntityType>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="IdComentario" />
+    </Key>
+    <Property Name="IdComentario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int64" Nullable="false" />
+    <Property Name="IdNoticia" Type="Int64" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Texto" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Noticia" Relationship="Self.fk_Noticia_Comentario" FromRole="Comentario" ToRole="Noticia" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fk_Usuario_Comentario" FromRole="Comentario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Noticia">
+    <Key>
+      <PropertyRef Name="IdNoticia" />
+    </Key>
+    <Property Name="IdNoticia" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int64" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Texto" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoNoticia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Archivo" Relationship="Self.fk_Noticia_Archivo" FromRole="Noticia" ToRole="Archivo" />
+    <NavigationProperty Name="Comentario" Relationship="Self.fk_Noticia_Comentario" FromRole="Noticia" ToRole="Comentario" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fk_Usuario_Noticia" FromRole="Noticia" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreUsuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TipoUsuario" Type="Byte" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Clave" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Comentario" Relationship="Self.fk_Usuario_Comentario" FromRole="Usuario" ToRole="Comentario" />
+    <NavigationProperty Name="Noticia" Relationship="Self.fk_Usuario_Noticia" FromRole="Usuario" ToRole="Noticia" />
+  </EntityType>
+  <Association Name="fk_Noticia_Archivo">
+    <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
+    <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Noticia">
+        <PropertyRef Name="IdNoticia" />
+      </Principal>
+      <Dependent Role="Archivo">
+        <PropertyRef Name="IdNoticia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Noticia_Comentario">
+    <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Noticia">
+        <PropertyRef Name="IdNoticia" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="IdNoticia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Usuario_Comentario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Usuario_Noticia">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Noticia" Type="Self.Noticia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Noticia">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PortalNoticiasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Archivo" EntityType="Self.Archivo" />
+    <EntitySet Name="Comentario" EntityType="Self.Comentario" />
+    <EntitySet Name="Noticia" EntityType="Self.Noticia" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="fk_Noticia_Archivo" Association="Self.fk_Noticia_Archivo">
+      <End Role="Noticia" EntitySet="Noticia" />
+      <End Role="Archivo" EntitySet="Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Noticia_Comentario" Association="Self.fk_Noticia_Comentario">
+      <End Role="Noticia" EntitySet="Noticia" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Usuario_Comentario" Association="Self.fk_Usuario_Comentario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Usuario_Noticia" Association="Self.fk_Usuario_Noticia">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Noticia" EntitySet="Noticia" />
+    </AssociationSet>
+    <FunctionImport Name="sp_MantenimientoArchivo">
+      <Parameter Name="Accion" Mode="In" Type="Byte" />
+      <Parameter Name="IdArchivo" Mode="In" Type="Int64" />
+      <Parameter Name="IdNoticia" Mode="In" Type="Int64" />
+      <Parameter Name="Ruta" Mode="In" Type="String" />
+      <Parameter Name="Tipo" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_MantenimientoComentario">
+      <Parameter Name="Accion" Mode="In" Type="Byte" />
+      <Parameter Name="IdComentario" Mode="In" Type="Int64" />
+      <Parameter Name="IdUsuario" Mode="In" Type="Int64" />
+      <Parameter Name="IdNoticia" Mode="In" Type="Int64" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="Texto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_MantenimientoNoticia">
+      <Parameter Name="Accion" Mode="In" Type="Byte" />
+      <Parameter Name="IdNoticia" Mode="In" Type="Int64" />
+      <Parameter Name="IdUsuario" Mode="In" Type="Int64" />
+      <Parameter Name="Titulo" Mode="In" Type="String" />
+      <Parameter Name="Texto" Mode="In" Type="String" />
+      <Parameter Name="Tipo" Mode="In" Type="String" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_MantenimientoUsuario">
+      <Parameter Name="Accion" Mode="In" Type="Byte" />
+      <Parameter Name="IdUsuario" Mode="In" Type="Int64" />
+      <Parameter Name="NombreUsuario" Mode="In" Type="String" />
+      <Parameter Name="TipoUsuario" Mode="In" Type="Byte" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido1" Mode="In" Type="String" />
+      <Parameter Name="Apellido2" Mode="In" Type="String" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ObtenerArchivo" ReturnType="Collection(PortalNoticiasModel.sp_ObtenerArchivo_Result)">
+      <Parameter Name="IdArchivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ObtenerComentario" ReturnType="Collection(PortalNoticiasModel.sp_ObtenerComentario_Result)">
+      <Parameter Name="IdComentario" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ObtenerNoticia" ReturnType="Collection(PortalNoticiasModel.sp_ObtenerNoticia_Result)">
+      <Parameter Name="IdNoticia" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ObtenerUsuario" ReturnType="Collection(PortalNoticiasModel.sp_ObtenerUsuario_Result)">
+      <Parameter Name="Accion" Mode="In" Type="Byte" />
+      <Parameter Name="IdUsuario" Mode="In" Type="Int64" />
+      <Parameter Name="NombreUsuario" Mode="In" Type="String" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_ObtenerArchivo_Result">
+    <Property Type="Int64" Name="IdArchivo" Nullable="false" />
+    <Property Type="Int64" Name="IdNoticia" Nullable="false" />
+    <Property Type="String" Name="Ruta" Nullable="false" MaxLength="250" />
+    <Property Type="Boolean" Name="Tipo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_ObtenerComentario_Result">
+    <Property Type="Int64" Name="IdComentario" Nullable="false" />
+    <Property Type="Int64" Name="IdUsuario" Nullable="false" />
+    <Property Type="Int64" Name="IdNoticia" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Texto" Nullable="false" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="sp_ObtenerNoticia_Result">
+    <Property Type="Int64" Name="IdNoticia" Nullable="false" />
+    <Property Type="Int64" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="Titulo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Texto" Nullable="false" MaxLength="8000" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoNoticia" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="sp_ObtenerUsuario_Result">
+    <Property Type="Int64" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="NombreUsuario" Nullable="false" MaxLength="15" />
+    <Property Type="Byte" Name="TipoUsuario" Nullable="true" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Apellido1" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Apellido2" Nullable="true" MaxLength="30" />
+  </ComplexType>
+</Schema>
