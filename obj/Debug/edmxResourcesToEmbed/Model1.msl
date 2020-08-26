@@ -47,54 +47,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_MantenimientoArchivo" FunctionName="PortalNoticiasModel.Store.sp_MantenimientoArchivo" />
-    <FunctionImportMapping FunctionImportName="sp_MantenimientoComentario" FunctionName="PortalNoticiasModel.Store.sp_MantenimientoComentario" />
-    <FunctionImportMapping FunctionImportName="sp_MantenimientoNoticia" FunctionName="PortalNoticiasModel.Store.sp_MantenimientoNoticia" />
-    <FunctionImportMapping FunctionImportName="sp_MantenimientoUsuario" FunctionName="PortalNoticiasModel.Store.sp_MantenimientoUsuario" />
-    <FunctionImportMapping FunctionImportName="sp_ObtenerArchivo" FunctionName="PortalNoticiasModel.Store.sp_ObtenerArchivo">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="PortalNoticiasModel.sp_ObtenerArchivo_Result">
-          <ScalarProperty Name="IdArchivo" ColumnName="IdArchivo" />
-          <ScalarProperty Name="IdNoticia" ColumnName="IdNoticia" />
-          <ScalarProperty Name="Ruta" ColumnName="Ruta" />
-          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_ObtenerComentario" FunctionName="PortalNoticiasModel.Store.sp_ObtenerComentario">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="PortalNoticiasModel.sp_ObtenerComentario_Result">
-          <ScalarProperty Name="IdComentario" ColumnName="IdComentario" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="IdNoticia" ColumnName="IdNoticia" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Texto" ColumnName="Texto" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_ObtenerNoticia" FunctionName="PortalNoticiasModel.Store.sp_ObtenerNoticia">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="PortalNoticiasModel.sp_ObtenerNoticia_Result">
-          <ScalarProperty Name="IdNoticia" ColumnName="IdNoticia" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
-          <ScalarProperty Name="Texto" ColumnName="Texto" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="TipoNoticia" ColumnName="TipoNoticia" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_ObtenerUsuario" FunctionName="PortalNoticiasModel.Store.sp_ObtenerUsuario">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="PortalNoticiasModel.sp_ObtenerUsuario_Result">
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
-          <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
-          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

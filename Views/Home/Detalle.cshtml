@@ -1,0 +1,34 @@
+﻿@model PortalNoticias.ETL.clsNoticia
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center mt-2">
+    <div class="col-md-10">
+        <h1>@Model.TituloNoticia</h1>
+
+        
+            @if (ViewData["extension"] as string == "imagen")
+            {
+                <img src="../@((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Ruta)" class="img-fluid" />
+            }
+            else if(ViewData["extension"] as string == "video")
+            {
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="@((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Ruta)" frameborder="0" allowfullscreen></iframe>
+                </div>
+            }
+        <p>@Model.FechaNoticia.ToShortDateString()</p>
+    </div>
+    <div class="col-md-10">
+        <p style="white-space:pre-line;">
+            @Model.TextoNoticia
+        </p>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script src="~/JS/ScriptNoticias.js"></script>
+}

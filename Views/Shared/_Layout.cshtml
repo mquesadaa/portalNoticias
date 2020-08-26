@@ -42,8 +42,6 @@
                         <li class="login_btn">Iniciar sesión</li>
                         <li class="registro_btn">@Html.ActionLink("Registrar", "RegistroIndex", "Login", null, new { @class = "enlaces" })</li>
                     </ul>
-                        
-                    
                 </div>
             </div>
         </div>
@@ -75,36 +73,27 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Home") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home","")">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Sucesos <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Sucesos") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home",new { tipoNoticia = "Sucesos" })">Sucesos <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Deportes <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Deportes") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home",new { tipoNoticia = "Deportes" })">Deportes <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Entretenimiento <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Entretenimiento") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home",new { tipoNoticia = "Entretenimiento" })">Entretenimiento <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Economía <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Economia") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home",new { tipoNoticia = "Economia" })">Economía <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Tecnología <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Tecnologia") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home",new { tipoNoticia = "Tecnologia" })">Tecnología <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Internacionales<span class="sr-only">(current)</span></a>
+                        <li class="nav-item @(((string)ViewBag.Etiqueta).Equals("Internacionales") ? "active" : "")">
+                            <a class="nav-link" href="@Url.Action("Index","Home",new { tipoNoticia = "Internacionales" })">Internacionales<span class="sr-only">(current)</span></a>
                         </li>
-
-                        <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Contacto<span class="sr-only">(current)</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">Teléfono</a>
-                            <a class="dropdown-item" href="#">Correo</a>
-                        </div>
-                        </li> -->
 
                     </ul>
                 </div>

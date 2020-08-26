@@ -1,0 +1,151 @@
+﻿@model PortalNoticias.ETL.clsNoticia
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row justify-content-center mt-2">
+    <div class="col-md-10">
+        <h1>Crear noticias</h1>
+        <form id="frmNoticias">
+            <input type="hidden" name="IdUsuario" value="@ViewData["IdUsuario"]" />
+            <div class="form-group col-sm-4">
+                <label for="IdNoticia" class="control-label">N° de noticia</label>
+                <input type="text" class="form-control" name="IdNoticia" value="@Model.IdNoticia" readonly />
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="FechaNoticia" class="control-label">Fecha</label>
+                <input type="text" class="form-control" name="FechaNoticia" value="@DateTime.Now.ToShortDateString()" readonly />
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="TipoNoticia" class="control-label">Fecha</label>
+                <select class="form-control" name="TipoNoticia" id="TipoNoticia">
+                    <option value="0">Selecione...</option>
+                    <option value="Sucesos" @((Model.TipoNoticia.Equals("Sucesos") ? "selected":""))>Sucesos</option>
+                    <option value="Deportes" @((Model.TipoNoticia.Equals("Deportes") ? "selected":""))>Deportes</option>
+                    <option value="Entretenimiento" @((Model.TipoNoticia.Equals("Entretenimiento") ? "selected":""))>Entretenimiento</option>
+                    <option value="Economia" @((Model.TipoNoticia.Equals("Economia") ? "selected":""))>Economía</option>
+                    <option value="Tecnologia" @((Model.TipoNoticia.Equals("Tecnologia") ? "selected":""))>Tecnología</option>
+                    <option value="Internacionales" @((Model.TipoNoticia.Equals("Internacionales") ? "selected":""))>Internacionales</option>
+
+                </select>
+            </div>
+
+            <div class="form-group col-12">
+                <label for="TituloNoticia" class="control-label">Título</label>
+                <input type="text" class="form-control" name="TituloNoticia" value="@Model.TituloNoticia" />
+            </div>
+            <div class="form-group col-12">
+                <label for="TextoNoticia" class="control-label">Texto de noticia</label>
+                <textarea class="form-control" name="TextoNoticia" rows="12">@Model.TextoNoticia</textarea>
+            </div>
+            <div class="mt-1">
+                <input type="button" class="btn btn-primary" id="btnEditarNoticia" value="Editar" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="modalArchivo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar archivo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @if (ViewData["Archivo"] != null)
+            {
+        <div class="modal-body">
+            <input type="hidden" name="IdNoticiaA" id="IdNoticiaA" value="@((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).IdNoticia)" />
+            <input type="hidden" name="IdArchivo" id="IdArchivo" value="@((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).IdArchivo)" />
+            <div class="form-group col-sm-8">
+                <label for="Tipo" class="control-label">Tipo de archivo</label>
+                <select class="form-control" name="Tipo" id="Tipo">
+                    <option value="">Selecione...</option>
+                    <option value="0" @((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Tipo ? "" : "selected")>Imagen</option>
+                    <option value="1" @((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Tipo ? "selected" : "")>Video</option>
+                </select>
+            </div>
+            <div id="tipoImagen" class="form-group @((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Tipo ? "hidden" : "")">
+                <label for="Ruta" class="control-label">Imagen</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Seleccionar archivo" id="TextoRuta" value="@((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Tipo ? "" : (ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Ruta)">
+                    <div class="input-group-append" onclick="BuscarArchivo()" style="cursor:pointer;">
+                        <span class="input-group-text" id="basic-addon2">Explorar</span>
+                    </div>
+                </div>
+                <script>
+                    function BuscarArchivo() {
+                        var elemento = document.getElementById("Ruta");
+                        elemento.click();
+                    }
+                </script>
+                <input type="file" name="Ruta" id="Ruta" class="d-none">
+            </div>
+
+            <div id="tipoVideo" class="form-group @((ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Tipo ? "" : "hidden")">
+                <label for="TextoRutaVideo" class="control-label">Link del video</label>
+                <input type="text" class="form-control" placeholder="Ingrese el link del video" id="TextoRutaVideo" value="@( (ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Tipo ? (ViewData["Archivo"] as PortalNoticias.ETL.clsArchivo).Ruta : "")">
+            </div>
+        </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnEditarArchivo">Guardar cambios</button>
+                </div>
+            }
+            else
+            {
+                <div class="modal-body">
+                    <input type="hidden" name="IdNoticia" id="IdNoticiaA" value="" />
+
+                    <div class="form-group col-sm-8">
+                        <label for="Tipo" class="control-label">Tipo de archivo</label>
+                        <select class="form-control" name="Tipo" id="Tipo">
+                            <option value="">Selecione...</option>
+                            <option value="0">Imagen</option>
+                            <option value="1">Video</option>
+                        </select>
+                    </div>
+
+                    <div id="tipoImagen" class="form-group hidden">
+                        <label for="Ruta" class="control-label">Imagen</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Seleccionar archivo" id="TextoRuta">
+                            <div class="input-group-append" onclick="BuscarArchivo()" style="cursor:pointer;">
+                                <span class="input-group-text" id="basic-addon2">Explorar</span>
+                            </div>
+                        </div>
+                        <script>
+                            function BuscarArchivo() {
+                                var elemento = document.getElementById("Ruta");
+                                elemento.click();
+                            }
+                        </script>
+                        <input type="file" name="Ruta" id="Ruta" class="d-none">
+                    </div>
+                    <div id="tipoVideo" class="form-group hidden">
+                        <label for="TextoRutaVideo" class="control-label">Link del video</label>
+                        <input type="text" class="form-control" placeholder="Ingrese el link del video" id="TextoRutaVideo">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnGuardarArchivo">Guardar archivo</button>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+    {
+    <script src="~/JS/ScriptNoticias.js"></script>
+}
