@@ -74,12 +74,12 @@ namespace PortalNoticias.Models
 
         public List<Noticia> ObtenerNoticias()
         {
-            using (var conn = new PortalNoticiasEntities())
-            {
+            PortalNoticiasEntities conn = new PortalNoticiasEntities();
+
                 var resultado = (from x in conn.Noticia
                                  select x).ToList();
                 return resultado;
-            }
+            
         }
 
         public Noticia ObtenerNoticiaPorId(int id)

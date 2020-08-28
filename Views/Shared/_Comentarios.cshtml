@@ -1,0 +1,55 @@
+﻿@model List<Comentario>
+
+<div class="row justify-content-center mt-2">
+    <div class="col-md-10">
+        @foreach (var item in Model)
+        {
+            <br>
+            <div id="div-comment-303281" class="border">
+                <div class="row mb-3">
+                    <div class="col-md-offset-2 col-7">
+                        <div class="comment-author vcard">
+                            <img alt="" src="https://secure.gravatar.com/avatar/699cf0eb72edef43a96f1df28bc3be53?s=32&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/699cf0eb72edef43a96f1df28bc3be53?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy">
+                            <cite class="fn">@item.Usuario.Nombre</cite> <span class="says">dice:</span>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="comment-meta commentmetadata">
+                            <a href="https://www.jose-aguilar.com/blog/caja-comentarios/#comment-303281">
+                                @item.Fecha
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-1">
+
+                    </div>
+                    <div class="col-11">
+                        <p>@item.Texto</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        }
+    </div>
+</div>
+<br>
+
+<div class="form-group">
+
+    <div class="mt-2 col-md-12">
+        <label for="comment">Comentario</label>
+        @Html.TextArea("Comentario", new { @class = "form-control", @rows = "6", @style = "min-width: 100%" })
+ 
+        <br>
+        <input id="btnAgregar" type="button" class="treding_btn" value="Agregar comentario" onclick="AgregarComentario();" />
+
+    </div>
+</div>

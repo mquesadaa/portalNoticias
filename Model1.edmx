@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PortalNoticiasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PortalNoticiasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Archivo">
           <Key>
             <PropertyRef Name="IdArchivo" />
@@ -35,6 +35,21 @@
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="TipoNoticia" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="User_UserId" />
+            <PropertyRef Name="Role_RoleId" />
+          </Key>
+          <Property Name="User_UserId" Type="bigint" Nullable="false" />
+          <Property Name="Role_RoleId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -47,6 +62,34 @@
           <Property Name="Apellido2" Type="varchar" MaxLength="30" />
           <Property Name="Clave" Type="varchar" MaxLength="300" Nullable="false" />
         </EntityType>
+        <Association Name="FK_dbo_UserRoles_dbo_Roles_Role_RoleId">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersInRoles" Type="Self.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="Role_RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserRoles_dbo_Users_User_UserId">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersInRoles" Type="Self.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="User_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_Noticia_Archivo">
           <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
           <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
@@ -95,11 +138,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="sp_getRolesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getUsuariosRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="roleName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_isUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+          <Parameter Name="roleName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_setSpecificRoleForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UsuarioID" Type="int" Mode="In" />
+          <Parameter Name="RoleID" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="PortalNoticiasModelStoreContainer">
           <EntitySet Name="Archivo" EntityType="Self.Archivo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Comentario" EntityType="Self.Comentario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Noticia" EntityType="Self.Noticia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersInRoles" EntityType="Self.UsersInRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_UserRoles_dbo_Roles_Role_RoleId" Association="Self.FK_dbo_UserRoles_dbo_Roles_Role_RoleId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserRoles_dbo_Users_User_UserId" Association="Self.FK_dbo_UserRoles_dbo_Users_User_UserId">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
           <AssociationSet Name="fk_Noticia_Archivo" Association="Self.fk_Noticia_Archivo">
             <End Role="Noticia" EntitySet="Noticia" />
             <End Role="Archivo" EntitySet="Archivo" />
@@ -117,8 +184,7 @@
             <End Role="Noticia" EntitySet="Noticia" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PortalNoticiasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -171,6 +237,7 @@
           <Property Name="Clave" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Comentario" Relationship="Self.fk_Usuario_Comentario" FromRole="Usuario" ToRole="Comentario" />
           <NavigationProperty Name="Noticia" Relationship="Self.fk_Usuario_Noticia" FromRole="Usuario" ToRole="Noticia" />
+          <NavigationProperty Name="Roles" Relationship="PortalNoticiasModel.UsersInRoles" FromRole="Usuario" ToRole="Role" />
         </EntityType>
         <Association Name="fk_Noticia_Archivo">
           <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
@@ -241,7 +308,38 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Noticia" EntitySet="Noticia" />
           </AssociationSet>
+          <EntitySet Name="Roles" EntityType="PortalNoticiasModel.Role" />
+          <AssociationSet Name="UsersInRoles" Association="PortalNoticiasModel.UsersInRoles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <FunctionImport Name="sp_getRolesForUser" ReturnType="Collection(String)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getUsuariosRole" ReturnType="Collection(String)">
+            <Parameter Name="roleName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_isUserInRole" ReturnType="Collection(Boolean)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="roleName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_setSpecificRoleForUser">
+            <Parameter Name="UsuarioID" Mode="In" Type="Int32" />
+            <Parameter Name="RoleID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuarios" Relationship="PortalNoticiasModel.UsersInRoles" FromRole="Role" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="UsersInRoles">
+          <End Type="PortalNoticiasModel.Role" Role="Role" Multiplicity="*" />
+          <End Type="PortalNoticiasModel.Usuario" Role="Usuario" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -294,6 +392,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="PortalNoticiasModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersInRoles" TypeName="PortalNoticiasModel.UsersInRoles" StoreEntitySet="UsersInRoles">
+            <EndProperty Name="Usuario">
+              <ScalarProperty Name="IdUsuario" ColumnName="User_UserId" />
+            </EndProperty>
+            <EndProperty Name="Role">
+              <ScalarProperty Name="RoleId" ColumnName="Role_RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_getRolesForUser" FunctionName="PortalNoticiasModel.Store.sp_getRolesForUser" />
+          <FunctionImportMapping FunctionImportName="sp_getUsuariosRole" FunctionName="PortalNoticiasModel.Store.sp_getUsuariosRole" />
+          <FunctionImportMapping FunctionImportName="sp_isUserInRole" FunctionName="PortalNoticiasModel.Store.sp_isUserInRole" />
+          <FunctionImportMapping FunctionImportName="sp_setSpecificRoleForUser" FunctionName="PortalNoticiasModel.Store.sp_setSpecificRoleForUser" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -308,10 +426,10 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -12,15 +12,18 @@ namespace PortalNoticias
     using System;
     using System.Collections.Generic;
     
-    public partial class Comentario
+    public partial class Role
     {
-        public long IdComentario { get; set; }
-        public long IdUsuario { get; set; }
-        public long IdNoticia { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public string Texto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.Usuarios = new HashSet<Usuario>();
+        }
     
-        public virtual Noticia Noticia { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

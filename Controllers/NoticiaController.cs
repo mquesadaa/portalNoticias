@@ -63,7 +63,8 @@ namespace PortalNoticias.Controllers
 
         public ActionResult Crear()
         {
-            ViewData["IdUsuario"] = 1; //Administrador
+            //Administrador
+            ViewData["IdUsuario"] = 1;
             return View();
         }
 

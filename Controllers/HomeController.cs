@@ -9,10 +9,14 @@ using System.Web.Mvc;
 
 namespace PortalNoticias.Controllers
 {
+    [Authorize]
+
     public class HomeController : Controller
     {
-        public ActionResult Index(string tipoNoticia = "")
+        [AllowAnonymous]
+        public ActionResult Index()
         {
+            string tipoNoticia = "";
             var listaNoticias = new List<clsNoticiaArchivo>();
             modeloNoticia mn = new modeloNoticia();
             modeloArchivo ma = new modeloArchivo();
@@ -23,10 +27,10 @@ namespace PortalNoticias.Controllers
                                  from archivos in (ma.ObtenerArchivos())
                                  where noticias.TipoNoticia != "" && noticias.IdNoticia == archivos.IdNoticia
                                  orderby noticias.Fecha
-                                 select new clsNoticiaArchivo 
-                                 { 
-                                    Archivo = archivos,
-                                    Noticia = noticias
+                                 select new clsNoticiaArchivo
+                                 {
+                                     Archivo = archivos,
+                                     Noticia = noticias
                                  }).ToList();
                 ViewBag.Etiqueta = "Home";
             }
@@ -47,6 +51,43 @@ namespace PortalNoticias.Controllers
             return View(listaNoticias);
         }
 
+
+        /*  public ActionResult Index(string tipoNoticia = "")
+          {
+              var listaNoticias = new List<clsNoticiaArchivo>();
+              modeloNoticia mn = new modeloNoticia();
+              modeloArchivo ma = new modeloArchivo();
+
+              if (tipoNoticia.Equals(""))
+              {
+                  listaNoticias = (from noticias in (mn.ObtenerNoticias())
+                                   from archivos in (ma.ObtenerArchivos())
+                                   where noticias.TipoNoticia != "" && noticias.IdNoticia == archivos.IdNoticia
+                                   orderby noticias.Fecha
+                                   select new clsNoticiaArchivo 
+                                   { 
+                                      Archivo = archivos,
+                                      Noticia = noticias
+                                   }).ToList();
+                  ViewBag.Etiqueta = "Home";
+              }
+              else
+              {
+                  listaNoticias = (from noticias in (mn.ObtenerNoticias())
+                                   from archivos in (ma.ObtenerArchivos())
+                                   where noticias.TipoNoticia == tipoNoticia && noticias.IdNoticia == archivos.IdNoticia
+                                   orderby noticias.Fecha
+                                   select new clsNoticiaArchivo
+                                   {
+                                       Archivo = archivos,
+                                       Noticia = noticias
+                                   }).ToList();
+                  ViewBag.Etiqueta = tipoNoticia;
+              }
+
+              return View(listaNoticias);
+          }*/
+        [AllowAnonymous]
         public ActionResult ConsultarId(int id)
         {
             modeloNoticia bd = new modeloNoticia();
@@ -101,5 +142,14 @@ namespace PortalNoticias.Controllers
 
             return View();
         }
+
+
+
+        //--------------------------------------------Cpmentarios------------------------------------------------
+
+
+
+
+        //------------------------------------------fin comentarios..............................................
     }
 }
